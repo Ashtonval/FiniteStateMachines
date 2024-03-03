@@ -247,7 +247,7 @@ public class Attack : State
         float angle = Vector3.Angle(direction, npc.transform.forward);
         direction.y = 0;
 
-        npc.transform.Rotate = Quaternion.Slerp(npc.transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotationSpeed);
+        npc.transform.rotation = Quaternion.Slerp(npc.transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotationSpeed);
         if(!CanAttackPlayer())
         {
             nextState = new Idle(npc, agent, anim, player);
